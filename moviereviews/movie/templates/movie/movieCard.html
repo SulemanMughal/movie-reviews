@@ -1,0 +1,10 @@
+<div class="col-12 col-md-4  d-flex align-items-stretch">
+    <div class="card   shadow-sm" >
+        <img src="/media/{{ movie.image }}" class="card-img-top embed-responsive-item" alt="{{ movie.title }}" />
+        <div class="card-body">
+        <h5 class="card-title fw-bolder">{{ movie.title }}</h5>
+        <p class="card-text">{{ movie.description }}</p>
+        <a href="{%  url 'details' movie.id %}" class="btn btn-primary" target="_self">Details</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{% extends 'movie/base.html' %}
+{% block extra_css %}
+<style>
+    .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+</style>
+{% endblock %}
+{% block title %}Movie Review{% endblock %}
+{% block content %}
+    <div class="container my-5">
+        {% if query %}
+            <div class="row justify-content-start mb-3">
+                <div class="col-12">
+                    <h3>
+                        Search for <span class="fw-bolder">"{{ query }}"</span>
+                    </h3>
+                </div>
+            </div>
+        {% endif %}
+        {% if movies %}
+            <div class="row justify-content-start">
+                {% for movie in movies %}
+                    {% include 'movie/movieCard.html' %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
